@@ -1,0 +1,30 @@
+    .Nav{
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        background-color: #494D5F;
+        justify-content: space-around;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            margin-right: 20px;
+            padding: 10px;
+            text-shadow: 1px 1px 1px black;
+        }
+        a:hover{
+                background-color: palevioletred;
+                color: white;
+        
+        }
+        a.active{
+                border:1px solid lightblue;
+                border-radius: 35px;
+                background-color:  #8458B3;
+                color: white;
+            }
+    }
+
+
