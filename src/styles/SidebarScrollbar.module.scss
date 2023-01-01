@@ -1,0 +1,37 @@
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, .75);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background   : rgba(255, 255, 255, .75);
+        border-radius: 10px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: rgba(22, 24, 35, .06);
+    }
+}
+
+.scrollbardarkmode {
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(18, 18, 18, 1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background   : rgba(18, 18, 18, 1);
+        border-radius: 10px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .75);
+    }
+}

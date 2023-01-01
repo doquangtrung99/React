@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper-search {
+    border-radius   : 25px;
+    display         : flex;
+    background-color: rgba(22, 24, 35, .06);
+    overflow        : hidden;
+    position        : relative;
+    border          : 1px solid white;
+
+    input {
+        width           : 300px;
+        padding         : 11px 10px 11px 12px;
+        background-color: transparent;
+        outline         : none;
+    }
+
+    &:focus-within {
+        border: 1px solid rgba(22, 24, 35, .2);
+    }
+
+    input:not(:placeholder-shown)~.icon {
+        color: black;
+    }
+
+    .icon {
+        color           : gray;
+        padding         : 12px 18px;
+        background-color: transparent;
+        position        : relative;
+    }
+
+    .icon::before {
+        content         : "";
+        width           : 1px;
+        height          : 30px;
+        background-color: rgba(22, 24, 35, .12);
+        position        : absolute;
+        top             : 50%;
+        left            : 0;
+        transform       : translateY(-50%);
+    }
+
+    .icon:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    .icon:active {
+        background: rgba(22, 24, 35, .06);
+    }
+}
+
+.wrapper-search1 {
+    border-radius   : 25px;
+    background-color: rgba(255, 255, 255, .12);
+    overflow        : hidden;
+    position        : relative;
+    border          : 1px solid rgba(255, 255, 255, .12);
+
+    input {
+        width           : 300px;
+        padding         : 11px 10px 11px 12px;
+        background-color: transparent;
+        outline         : none;
+    }
+
+    &:focus-within {
+        border: 1px solid rgba(22, 24, 35, .2);
+    }
+
+    input:not(:placeholder-shown)~.icon {
+        color: grey;
+    }
+
+    .icon {
+        color   : white;
+        padding : 12px 18px;
+        position: relative;
+    }
+
+    .icon::before {
+        content         : "";
+        width           : 1px;
+        height          : 30px;
+        background-color: white;
+        position        : absolute;
+        top             : 50%;
+        left            : 0;
+        transform       : translateY(-50%);
+    }
+
+    .icon:hover {
+        background-color: rgba(255, 255, 255, .04);
+    }
+
+    .icon:active {
+        background: rgba(255, 255, 255, .08);
+    }
+}
