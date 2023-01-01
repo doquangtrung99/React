@@ -1,43 +1,33 @@
-import './App.scss';
 import {
-  BrowserRouter,
-  Routes,
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
   Route,
 } from "react-router-dom";
-import Mainproject from './CRUD/Mainproject';
-import Login from './CRUD/Login';
-import Homepage from './CRUD/Homepage';
-import SingleProduct from './CRUD/SingleProduct';
-import CartProduct from './CRUD/Cart';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import RootPage from './component/pages/RootPage';
+import { publishroute } from './component/route/publishroutes'
+import DefaultLayout from './component/DefaultLayout';
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path='/' element={<RootPage />}>
+    {publishroute.map(item => {
+
+      const Element = item.component
+      return (
+        <Route path={item.path} element={item.layout ? <DefaultLayout><Element /></DefaultLayout> : <Element />} />
+      )
+    })}
+  </Route>
+))
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          <Routes>
-            <Route exact path="/mainproject" element={<Mainproject />} />
-            <Route exact path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/singleproduct" element={<SingleProduct />} />
-            <Route path="/cartproduct" element={<CartProduct />} />
-          </Routes>
-        </header>
-        <ToastContainer
-          position="top-center"
-          autoClose={1000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
-    </BrowserRouter>
+    <div >
+      <header >
+        <RouterProvider router={router} />
+      </header>
+
+    </div>
 
   );
 }

@@ -5,7 +5,7 @@ import { TriangleUpIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import Tippy from '@tippyjs/react/headless'
 
 
-const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem , theme}) => {
+const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem, theme }) => {
 
     const dataItem = [
         {
@@ -79,7 +79,7 @@ const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem , theme}
 
         >
             <Button
-                bg={theme ? "rgba(255, 255, 255, .08)" :"transparent"}
+                bg={theme ? "rgba(255, 255, 255, .08)" : "transparent"}
                 border="1px solid"
                 borderColor="rgba(22, 24, 35, 0.12)"
                 w="110px"
@@ -146,7 +146,7 @@ const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem , theme}
                                 color={!theme ? "rgba(255, 255, 255, 1)" : "rgb(37, 37, 37)"}
                                 transform="translate(227px,-75%)"
                             />
-                            <RenderItem {...CSS1}  theme={theme}>
+                            <RenderItem {...CSS1} theme={theme}>
                                 {history.length > 1 &&
                                     <Flex mt="-8px" w="100%">
                                         <Box ml={10} mr={5} cursor="pointer" fontSize="24px" mb={1} onClick={() => {
@@ -160,6 +160,7 @@ const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem , theme}
                                     </Flex>
                                 }
                                 {current.data.map((item, index) => {
+                                    console.log('item', item)
                                     if (item.content === 'Dark mode') {
                                         return <ListItem theme={theme} key={index} icon={item.icon} ml="20px" content={item.content} hasSwitch handleCheck={handleCheck} />
                                     }
