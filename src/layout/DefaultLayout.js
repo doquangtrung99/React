@@ -1,7 +1,7 @@
 import { SimpleGrid, HStack } from '@chakra-ui/react'
 import { useState } from 'react'
-import { HeaderTiktok } from './headertiktok'
-import { SideBar } from './sidebar'
+import { HeaderTiktok } from '../component/headertiktok'
+import { SideBar } from '../component/sidebar'
 const DefaultLayout = ({ children }) => {
 
     const [theme, setTheme] = useState(false)

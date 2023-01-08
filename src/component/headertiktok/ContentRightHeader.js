@@ -160,7 +160,6 @@ const ContentRightHeader = ({ handleCheck, images, ListItem, RenderItem, theme }
                                     </Flex>
                                 }
                                 {current.data.map((item, index) => {
-                                    console.log('item', item)
                                     if (item.content === 'Dark mode') {
                                         return <ListItem theme={theme} key={index} icon={item.icon} ml="20px" content={item.content} hasSwitch handleCheck={handleCheck} />
                                     }

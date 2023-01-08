@@ -1,15 +1,16 @@
 import { SimpleGrid, Text, Box, Stack } from '@chakra-ui/react'
 import { useState, useCallback } from 'react'
-import images from '../../images'
-import { ListItem } from '../headertiktok'
-import styles from '../../styles/SidebarScrollbar.module.scss'
 import { fakeData } from '../dataFake'
+import { ListItem } from '../headertiktok'
+import images from '../../images'
+import styles from '../../styles/SidebarScrollbar.module.scss'
 
 const SideBar = ({ theme }) => {
     const [condition, setCondition] = useState(false)
     const SidebarCss = {
         minH: window.innerHeight - 69,
         height: '100px',
+        minW: 350,
         overflowY: "auto"
     }
 

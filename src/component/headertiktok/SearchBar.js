@@ -6,15 +6,20 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const SearchBar = ({ ListItem, RenderItem, theme }) => {
-    const [SearchContent, setSearchContent] = useState()
+    const [SearchContent, setSearchContent] = useState('')
     const [loading, setLoading] = useState(false)
     const [isShow, setIsShow] = useState(false)
     const [data, setData] = useState([])
     const clearData = () => {
         setSearchContent(prev => '')
+        setData(prev => [])
     }
     const handleisShow = () => {
         setIsShow(!isShow)
+    }
+
+    const handleChange = (e) => {
+        setSearchContent(prev => e.target.value.trimStart())
     }
     useEffect(() => {
         if (SearchContent) {
@@ -54,7 +59,7 @@ const SearchBar = ({ ListItem, RenderItem, theme }) => {
                         value={{ ...attrs }}
                         maxHeight='400px'
                         w="350px"
-                        header="Accounts"
+                        header={data.length > 0 && "Accounts"}
                     >
                         {data.map((item, index) => {
                             return (
@@ -77,9 +82,8 @@ const SearchBar = ({ ListItem, RenderItem, theme }) => {
                         value={SearchContent}
                         spellCheck={false}
                         placeholder='Search accounts and videos'
-                        onChange={(e) => {
-                            setSearchContent(e.target.value)
-                        }}
+                        onClick={() => setIsShow(prev => true)}
+                        onChange={(e) => handleChange(e)}
                     />
                     {loading ?
                         <Spinner

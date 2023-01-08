@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import RootPage from './component/pages/RootPage';
 import { publishroute } from './component/route/publishroutes'
-import DefaultLayout from './component/DefaultLayout';
+import {DefaultLayout} from './layout';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<RootPage />}>
     {publishroute.map(item => {

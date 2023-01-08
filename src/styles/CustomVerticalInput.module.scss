@@ -1,0 +1,43 @@
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position          : relative;
+    height            : 15px;
+    width             : 15px;
+    border-radius     : 10px;
+    background        : rgb(255, 255, 255);
+    cursor            : pointer;
+    border            : none;
+    margin-top        : -8px;
+    margin-bottom     : -8px;
+}
+
+input[type=range]::before {
+    content      : "";
+    position     : absolute;
+    background   : rgb(255, 255, 255);
+    border-radius: 10px;
+    outline      : 0;
+    padding      : 0;
+    height       : 2px;
+    width        : 50px;
+    bottom       : 11px;
+    left         : 5px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color  : rgba(22, 24, 35, 0.34);
+    width             : 64px;
+    height            : 24px;
+    position          : absolute;
+    border-radius     : 32px;
+}
+
+.vertical {
+    transform       : rotate(-90deg);
+    position        : absolute;
+    transform-origin: left;
+    left            : 50%;
+    bottom          : -1em;
+    top             : 0px;
+}
